@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS CSV</title>
+</head>
+
+<body>
+    <!-- <button id="b">export to CSV</button> -->
+
+
+
+<style>
+  #box-container {
+    background: gray;
+    display: flex;
+    height: 500px;
+    
+  }
+  #box-1 {
+    background-color: dodgerblue;
+    width: 25%;
+    height: 100%;
+  }
+
+  #box-2 {
+    background-color: orangered;
+    width: 25%;
+    height: 100%;
+  }
+</style>
+
+<!-- <div id="box-container">
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+</div>
+
+<span>Ovo je span</span>-->
+<div id="apple">Apples taste good.</div> 
+
+
+<button id="gumb">Klikni me</button>
+
+    <script type="text/javascript">
+
+
+// Create a request variable and assign a new XMLHttpRequest object to it.
+var upit = new XMLHttpRequest();
+
+// Open a new connection, using the GET request on the URL endpoint
+upit.open('GET', 'https://ghibliapi.herokuapp.com/species', true);
+
+upit.onload = function () {
+  // Begin accessing JSON data here
+  // Begin accessing JSON data here
+var data = JSON.parse(this.response);
+
+data.forEach(movie => {
+  // Log each movie's title
+  console.log(movie.name);
+});
+  }
+
+
+// Send request
+upit.send();
+
+
+
+    </script>
+</body>
+
+</html>
